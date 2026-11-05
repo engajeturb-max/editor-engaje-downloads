@@ -2,7 +2,7 @@ import http from 'node:http';
 import { URL } from 'node:url';
 
 const port = Number(process.env.PORT || 10000);
-const localCallback = 'http://127.0.0.1:47820/auth/meta/callback';
+const localCallback = 'http://127.0.0.1:47321/auth/meta/callback';
 const allowedParams = new Set(['code', 'state', 'error', 'error_reason', 'error_description']);
 
 function reply(res, status, body, contentType = 'text/plain; charset=utf-8') {
