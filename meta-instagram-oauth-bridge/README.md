@@ -1,6 +1,6 @@
 # Meta Instagram OAuth callback bridge
 
-This isolated service only receives Meta's short-lived OAuth `code` and `state`, then redirects the browser to the fixed local AgendoEngaje callback at `http://127.0.0.1:47820/auth/meta/callback`.
+This isolated service only receives Meta's short-lived OAuth `code` and `state`, then redirects the browser to the fixed local AgendoEngaje callback at `http://127.0.0.1:47321/auth/meta/callback`.
 
 - It does not exchange or persist access tokens.
 - The local app validates the OAuth state, exchanges the code, and stores the token in its encrypted local vault.
