@@ -39,9 +39,9 @@ const server = http.createServer((req, res) => {
   const code = params.get('code') || '';
   const hasError = params.has('error') || params.has('error_reason');
 
-  // AgendoEngaje creates a 32-byte base64url state value (43 characters).
+  // Engaje Publisher creates 24 random bytes encoded as 48 lowercase hex characters.
   // Reject malformed input before sending the callback to the fixed local app.
-  if (!/^[A-Za-z0-9_-]{43}$/.test(state)) return reply(res, 400, 'Invalid OAuth state');
+  if (!/^[a-f0-9]{48}$/.test(state)) return reply(res, 400, 'Invalid OAuth state');
   if (!hasError && (!code || code.length > 4096)) return reply(res, 400, 'Invalid OAuth code');
 
   res.writeHead(303, {
